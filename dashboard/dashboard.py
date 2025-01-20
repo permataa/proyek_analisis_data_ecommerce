@@ -8,7 +8,7 @@ from io import BytesIO
 # Fungsi untuk memuat data
 @st.cache_data
 def load_data():
-    return pd.read_csv("all_data(2).csv")
+    return pd.read_csv("data/all_data(2).csv")
 
 # Muat data
 data = load_data()
