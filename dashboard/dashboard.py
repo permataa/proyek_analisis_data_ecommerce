@@ -12,9 +12,9 @@ def load_data():
     # Dapatkan direktori saat ini berdasarkan lokasi script
     current_dir = os.path.dirname(os.path.abspath(__file__))
     file_path = os.path.join(current_dir, "all_data(2).csv")
-    # Pastikan path file terlihat
-    st.write(f"File Path: {file_path}")
-    return pd.read_csv(file_path)
+    # # Pastikan path file terlihat
+    # st.write(f"File Path: {file_path}")
+    # return pd.read_csv(file_path)
 
 # Muat data
 data = load_data()
