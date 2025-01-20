@@ -2,13 +2,19 @@ import streamlit as st
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
+import os
 from datetime import datetime
 from io import BytesIO
 
 # Fungsi untuk memuat data
 @st.cache_data
 def load_data():
-    return pd.read_csv("data/all_data(2).csv")
+    # Dapatkan direktori saat ini berdasarkan lokasi script
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    file_path = os.path.join(current_dir, "all_data(2).csv")
+    # Pastikan path file terlihat
+    st.write(f"File Path: {file_path}")
+    return pd.read_csv(file_path)
 
 # Muat data
 data = load_data()
