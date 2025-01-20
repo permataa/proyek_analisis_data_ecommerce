@@ -1,6 +1,12 @@
-# E-Commerce Data Analysis Dashboard
+# E-Commerce Data Analysis Dashboard ✨
 Dashboard ini dibuat untuk membantu menganalisis data e-commerce, menggali insight dari data, dan memberikan visualisasi interaktif untuk mendukung pengambilan keputusan bisnis.
 
+## Setup Environment - Anaconda
+```
+conda create --name main-ds python=3.9
+conda activate main-ds
+pip install -r requirements.txt
+```
 
 ## Fitur
 Dashboard ini memiliki fitur berikut:
@@ -15,6 +21,20 @@ Dashboard ini memiliki fitur berikut:
 	Pilihan untuk mengubah tema warna visualisasi sesuai preferensi pengguna.
 5. Unduh Data yang Difilter :
 	Data yang difilter dapat diunduh dalam format CSV untuk keperluan analisis lebih lanjut.
+
+## Setup Environment - Shell/Terminal
+```
+mkdir proyek_analisis_data
+cd proyek_analisis_data
+pipenv install
+pipenv shell
+pip install -r requirements.txt
+```
+
+## Run steamlit app
+```
+streamlit run dashboard.py
+```
 
 
 ## Cara Menjalankan
