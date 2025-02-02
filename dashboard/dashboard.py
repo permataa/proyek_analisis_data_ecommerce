@@ -58,7 +58,7 @@ st.markdown("""
     """, unsafe_allow_html=True)
 
 if selected_analysis == "Produk Terlaris":
-    st.subheader("Produk Apa yang Paling Banyak Terjual?")
+    st.subheader("Produk apa yang memiliki jumlah penjualan tertinggi dalam periode yang tersedia di data penjualan?")
     # Produk Terlaris
     top_products = filtered_data.groupby('product_category_name')['order_item_id'].count().sort_values(ascending=False).head(10)
 
@@ -74,7 +74,7 @@ if selected_analysis == "Produk Terlaris":
     st.write("**Kesimpulan:** Kategori produk yang paling banyak terjual adalah 'cama_mesa_banho', diikuti oleh 'beleza_saude' dan 'esporte_lazer'.")
     
 elif selected_analysis == "Metode Pembayaran vs Nilai Pesanan":
-    st.subheader("Apakah Metode Pembayaran Mempengaruhi Nilai Pesanan?")
+    st.subheader("Apakah terdapat perbedaan rata-rata nilai pesanan berdasarkan metode pembayaran (misalnya kartu kredit, transfer bank, atau e-wallet) di data yang tersedia?")
     # Rata-rata Nilai Pesanan per Metode Pembayaran
     avg_payment = filtered_data.groupby('payment_type')['price'].mean().sort_values(ascending=False)
 
@@ -90,7 +90,7 @@ elif selected_analysis == "Metode Pembayaran vs Nilai Pesanan":
     st.write("**Kesimpulan:** Kartu kredit digunakan untuk pesanan dengan nilai lebih tinggi dibanding metode pembayaran lainnya seperti debit_card, voucher, dan boleto.")
 
 elif selected_analysis == "Lokasi Pelanggan vs Waktu Pengiriman":
-    st.subheader("Apakah Lokasi Pelanggan Mempengaruhi Waktu Pengiriman?")
+    st.subheader("Bagaimana pengaruh lokasi pelanggan (misalnya kota atau provinsi) terhadap rata-rata waktu pengiriman berdasarkan data yang tersedia?")
     # Rata-rata Waktu Pengiriman per Lokasi Pelanggan
     filtered_data['shipping_time'] = pd.to_datetime(filtered_data['order_delivered_customer_date']) - pd.to_datetime(filtered_data['order_purchase_timestamp'])
     avg_shipping_time = filtered_data.groupby('customer_state')['shipping_time'].mean().dt.days
